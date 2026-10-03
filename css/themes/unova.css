@@ -1,0 +1,202 @@
+/* Unova (anime Pokedex) theme. Applies when .dex has data-theme="unova". */
+
+/* ----- Grey body (left) ----- */
+.dex[data-theme="unova"] .panel.left {
+  background: linear-gradient(160deg, #858585, #4f4f4f);
+  border-color: #1a1a1a;
+  border-right: none;
+  border-radius: 14px 0 0 14px;
+}
+
+/* Seam between the grey body and the red disc */
+.dex[data-theme="unova"] .hinge {
+  background: linear-gradient(90deg, #202020, #3c3c3c, #202020);
+  border-color: #1a1a1a;
+  margin: 0;
+}
+
+/* Upper black screen (the lights row becomes a dark strip) */
+.dex[data-theme="unova"] .lights {
+  background: #101418;
+  border: 3px solid #2e3236;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+.dex[data-theme="unova"] .lens {
+  width: 10px;
+  height: 40px;
+  visibility: hidden;
+}
+.dex[data-theme="unova"] .led {
+  visibility: hidden;
+}
+
+/* Small green side button */
+.dex[data-theme="unova"] .panel.left {
+  position: relative;
+}
+.dex[data-theme="unova"] .panel.left::after {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 90px;
+  width: 10px;
+  height: 34px;
+  background: linear-gradient(90deg, #2fbf4a, #8cf09a);
+  border: 2px solid #0f4a1c;
+  border-radius: 3px;
+  transform: skewY(-8deg);
+}
+
+/* Main black screen */
+.dex[data-theme="unova"] .bezel {
+  background: #2a2a2a;
+  border-color: #1a1a1a;
+  border-radius: 8px;
+}
+.dex[data-theme="unova"] .screen {
+  background: #0f1418;
+  border-color: #3a3f44;
+  color: #d9ecf7;
+}
+.dex[data-theme="unova"] .divider::before {
+  background: #d9ecf7;
+}
+.dex[data-theme="unova"] .divider span {
+  border-color: #d9ecf7;
+  background: #0f1418;
+}
+
+/* Small black LCD for the dex number */
+.dex[data-theme="unova"] .green-screen {
+  background: #0f1418;
+  border-color: #3a3f44;
+  color: #7ee0a0;
+}
+
+/* ----- Red half-disc (right) ----- */
+.dex[data-theme="unova"] .panel.right {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(160deg, #e0142f, #a50c21);
+  border-color: #3a0510;
+  border-left: none;
+  border-radius: 0 70px 70px 0;
+  padding-right: 34px;
+}
+
+/* Black diagonal band across the disc */
+.dex[data-theme="unova"] .panel.right::before {
+  content: "";
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  top: 50%;
+  height: 34px;
+  margin-top: -17px;
+  background: linear-gradient(#2a2a2a, #1c1c1c);
+  transform: rotate(-20deg);
+  z-index: -1;
+}
+
+.dex[data-theme="unova"] .dark-display {
+  border-color: #1a1a1a;
+}
+
+.dex[data-theme="unova"] .blue-grid button {
+  background: #4a4a4a;
+  border-color: #1a1a1a;
+  color: #eee;
+}
+.dex[data-theme="unova"] .blue-grid button:active {
+  background: #6a6a6a;
+}
+
+/* GO becomes the white centre button, in the middle of the disc */
+.dex[data-theme="unova"] .go {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 40% 35%, #ffffff, #d2d2d2);
+  border: 6px solid #1e1e1e;
+  color: #222;
+}
+.dex[data-theme="unova"] .go:active {
+  transform: translate(-50%, -50%) scale(0.94);
+}
+
+/* ----- Unova: the top strip is a light/dark screen button ----- */
+.dex[data-theme="unova"] .lights {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.dex[data-theme="unova"] .lights:hover {
+  filter: brightness(1.4);
+}
+.dex[data-theme="unova"] .lights:active {
+  filter: brightness(1.8);
+}
+
+/* Small label inside the strip, saying what a click will do */
+.dex[data-theme="unova"] .lights::after {
+  content: "LIGHT MODE";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  color: #5b6770;
+}
+.dex[data-theme="unova"].light-screen .lights::after {
+  content: "DARK MODE";
+}
+
+/* Light screen */
+.dex[data-theme="unova"].light-screen .screen {
+  background: #f1f5f7;
+  border-color: #a3acb3;
+  color: #101418;
+}
+.dex[data-theme="unova"].light-screen .divider::before {
+  background: #101418;
+}
+.dex[data-theme="unova"].light-screen .divider span {
+  border-color: #101418;
+  background: #f1f5f7;
+}
+.dex[data-theme="unova"].light-screen .green-screen {
+  background: #e3eaee;
+  border-color: #a3acb3;
+  color: #1b6b3a;
+}
+
+/* ----- Phones: stack the halves ----- */
+@media (max-width: 700px) {
+  .dex[data-theme="unova"] .panel.left {
+    border-right: 4px solid #1a1a1a;
+    border-radius: 14px 14px 0 0;
+  }
+  .dex[data-theme="unova"] .panel.left::after {
+    display: none;
+  }
+  .dex[data-theme="unova"] .panel.right {
+    border-left: 4px solid #3a0510;
+    border-radius: 0 0 70px 70px;
+    padding-right: 18px;
+  }
+  .dex[data-theme="unova"] .hinge {
+    width: auto;
+    height: 16px;
+    border-left: 4px solid #1a1a1a;
+    border-right: 4px solid #1a1a1a;
+    border-top: none;
+    border-bottom: none;
+    background: linear-gradient(180deg, #202020, #3c3c3c, #202020);
+  }
+}

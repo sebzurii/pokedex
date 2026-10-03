@@ -1,0 +1,14 @@
+/* Other dexes (placeholder look) theme. Applies when .dex has data-theme="other". */
+
+.dex[data-theme="other"] .panel {
+  background: linear-gradient(160deg, #6a3fb0, #3a1f6e);
+  border-color: #1e0f40;
+}
+.dex[data-theme="other"] .hinge {
+  background: linear-gradient(90deg, #2a1550, #7a52c0, #2a1550);
+  border-color: #1e0f40;
+}
+.dex[data-theme="other"] .screen {
+  background: #ece6f8;
+  border-color: #4a2a8a;
+}
