@@ -1,0 +1,158 @@
+/* Galar (Rotom Phone) theme. Applies when .dex has data-theme="galar". */
+
+/* ----- Room above for the bolt and below for the tail, plus an outline
+         that wraps the whole silhouette, parts included ----- */
+.dex[data-theme="galar"] {
+  position: relative;
+  margin: 4rem 1rem 3rem;
+  filter: drop-shadow(2px 0 0 #7a2410) drop-shadow(-2px 0 0 #7a2410) drop-shadow(0 2px 0 #7a2410)
+    drop-shadow(0 -2px 0 #7a2410);
+}
+
+/* ----- One joined orange phone body ----- */
+.dex[data-theme="galar"] .hinge {
+  display: none;
+}
+.dex[data-theme="galar"] .panel {
+  background: linear-gradient(180deg, #f2663f, #d94423);
+  border-color: transparent; /* the outline above draws the edge */
+  box-shadow: none;
+}
+.dex[data-theme="galar"] .panel.left {
+  border-right: none;
+  border-radius: 34px 0 0 34px;
+}
+.dex[data-theme="galar"] .panel.right {
+  border-left: none;
+  border-radius: 0 34px 34px 0;
+}
+
+/* ----- Lightning bolt on top ----- */
+.dex[data-theme="galar"]::before {
+  content: "";
+  position: absolute;
+  top: -58px;
+  left: 20%;
+  width: 46px;
+  height: 66px;
+  background: linear-gradient(90deg, #f46c44, #e24f2b);
+  clip-path: polygon(55% 0, 100% 0, 70% 40%, 100% 40%, 25% 100%, 40% 55%, 5% 55%);
+}
+
+/* ----- Pointed tail underneath ----- */
+.dex[data-theme="galar"]::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 62%;
+  width: 42px;
+  height: 34px;
+  background: linear-gradient(90deg, #e24f2b, #d94423);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* ----- Rotom's eye as the camera, a small blue dot beside it ----- */
+.dex[data-theme="galar"] .lights {
+  justify-content: space-between;
+}
+.dex[data-theme="galar"] .lens {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #7a2410;
+  background:
+    radial-gradient(circle at 36% 30%, #ffffff 0 8%, transparent 9%),
+    radial-gradient(circle, #1b3a46 0 24%, #7fe3ee 26% 62%, #ffffff 64%);
+  box-shadow: none;
+  animation: none;
+}
+.dex[data-theme="galar"] .led.r,
+.dex[data-theme="galar"] .led.y {
+  display: none;
+}
+.dex[data-theme="galar"] .led.g {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 35% 35%, #d6ecff, #4a9cf0);
+  border-color: #7a2410;
+}
+
+/* ----- Black glass screen with a soft diagonal reflection ----- */
+.dex[data-theme="galar"] .bezel {
+  position: relative;
+  background: #0b0e12;
+  border: 4px solid #1a1d22;
+  border-radius: 20px;
+  padding: 12px;
+}
+.dex[data-theme="galar"] .bezel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.1) 0 30%, transparent 31%);
+}
+.dex[data-theme="galar"] .screen {
+  background: linear-gradient(180deg, #121a22, #0a0f14);
+  border: 3px solid #2a3340;
+  color: #e8f2f8;
+}
+.dex[data-theme="galar"] .divider::before {
+  background: #e8f2f8;
+}
+.dex[data-theme="galar"] .divider span {
+  border-color: #e8f2f8;
+  background: #0a0f14;
+}
+
+/* ----- Bottom row ----- */
+.dex[data-theme="galar"] .round {
+  background: radial-gradient(circle at 35% 35%, #4a4f57, #14161a);
+  border: 3px solid #7a2410;
+}
+.dex[data-theme="galar"] .green-screen {
+  background: #0b0e12;
+  border-color: #2a3340;
+  color: #7be0ee;
+}
+.dex[data-theme="galar"] .dpad button,
+.dex[data-theme="galar"] .dpad .mid {
+  background: #1b1f25;
+  color: #c9d4dc;
+}
+.dex[data-theme="galar"] .dpad button:hover {
+  background: #3a424c;
+}
+
+/* ----- Right side ----- */
+.dex[data-theme="galar"] .dark-display {
+  border-color: #7a2410;
+}
+.dex[data-theme="galar"] .blue-grid button {
+  background: linear-gradient(180deg, #2a3038, #14181d);
+  border-color: #7a2410;
+  color: #e8f2f8;
+}
+.dex[data-theme="galar"] .blue-grid button:active {
+  background: #3a424c;
+}
+.dex[data-theme="galar"] .go {
+  background: radial-gradient(circle at 35% 35%, #ffffff, #bff0f4 55%, #5cc8d4);
+  border-color: #7a2410;
+  color: #0b3a44;
+}
+
+/* ----- Phones: stack the halves, flat colour so there's no seam ----- */
+@media (max-width: 700px) {
+  .dex[data-theme="galar"] .panel {
+    background: #e8502f;
+  }
+  .dex[data-theme="galar"] .panel.left {
+    border-right: 4px solid transparent;
+    border-radius: 34px 34px 0 0;
+  }
+  .dex[data-theme="galar"] .panel.right {
+    border-left: 4px solid transparent;
+    border-radius: 0 0 34px 34px;
+  }
+}

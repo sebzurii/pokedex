@@ -1,0 +1,104 @@
+/* Sinnoh theme. Applies when .dex has data-theme="sinnoh". */
+
+/* Glossy red shell */
+.dex[data-theme="sinnoh"] .panel {
+  background: linear-gradient(160deg, #ec4046, #b01c26);
+  border-color: #5e0c14;
+}
+.dex[data-theme="sinnoh"] .hinge {
+  background: linear-gradient(90deg, #7a1018, #d02a34, #7a1018);
+  border-color: #5e0c14;
+}
+
+/* Speaker dots instead of the lens (top left, like the photo) */
+.dex[data-theme="sinnoh"] .lens {
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 12px;
+  background: radial-gradient(circle, #2a0a0e 3px, transparent 3.5px) 0 0 / 15px 15px;
+  box-shadow: none;
+  animation: none;
+}
+.dex[data-theme="sinnoh"] .led {
+  border-color: #3a0a10;
+}
+
+/* Black frame around a pale blue screen */
+.dex[data-theme="sinnoh"] .bezel {
+  background: #17171b;
+  border-color: #0a0a0c;
+}
+.dex[data-theme="sinnoh"] .screen {
+  background: #dce6f4;
+  border-color: #3b4e78;
+  color: #17233f;
+}
+.dex[data-theme="sinnoh"] .divider::before {
+  background: #17233f;
+}
+.dex[data-theme="sinnoh"] .divider span {
+  border-color: #17233f;
+  background: #dce6f4;
+}
+
+/* Black base trays under the controls */
+.dex[data-theme="sinnoh"] .bottom,
+.dex[data-theme="sinnoh"] .bottom-right {
+  background: #17171b;
+  box-shadow: 0 0 0 8px #17171b;
+  border-radius: 16px;
+  padding: 0 8px;
+}
+
+/* Small green light at the left of the base */
+.dex[data-theme="sinnoh"] .round {
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 35% 35%, #c6ffd0, #3cc85a 60%, #187a30);
+  border: 2px solid #0f3a1c;
+}
+
+/* Small LCD for the dex number */
+.dex[data-theme="sinnoh"] .green-screen {
+  background: #cfdcee;
+  border-color: #3b4e78;
+  color: #17233f;
+}
+
+/* Silver D-pad on the black base */
+.dex[data-theme="sinnoh"] .dpad button,
+.dex[data-theme="sinnoh"] .dpad .mid {
+  background: #8c9099;
+  color: #222;
+}
+.dex[data-theme="sinnoh"] .dpad button:hover {
+  background: #aab0ba;
+}
+
+/* Dark number display with a red edge */
+.dex[data-theme="sinnoh"] .dark-display {
+  border-color: #5e0c14;
+}
+
+/* Pale keypad buttons */
+.dex[data-theme="sinnoh"] .blue-grid button {
+  background: #e8edf5;
+  border-color: #6f7c96;
+  color: #17233f;
+}
+.dex[data-theme="sinnoh"] .blue-grid button:active {
+  background: #c4cde0;
+}
+
+/* GO becomes the round dial with the green centre */
+.dex[data-theme="sinnoh"] .go {
+  width: 52px;
+  height: 52px;
+  background: radial-gradient(circle, #5fe07a 0 24%, #1b6e30 26% 30%, #1a1a1e 32% 62%, #3a3a42 64%);
+  border: 3px solid #0a0a0c;
+  color: transparent;
+}
+.dex[data-theme="sinnoh"] .go:active {
+  filter: brightness(1.3);
+}

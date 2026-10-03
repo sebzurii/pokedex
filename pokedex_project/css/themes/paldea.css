@@ -1,0 +1,181 @@
+/* Paldea (Rotom Phone, back view) theme. Applies when .dex has data-theme="paldea". */
+
+/* ----- One tall phone, with room for the bolt and the tail ----- */
+.dex[data-theme="paldea"] {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 420px;
+  margin: 4.5rem 1rem 3.5rem;
+  filter: drop-shadow(2px 0 0 #7a2410) drop-shadow(-2px 0 0 #7a2410) drop-shadow(0 2px 0 #7a2410)
+    drop-shadow(0 -2px 0 #7a2410);
+}
+.dex[data-theme="paldea"] .hinge {
+  display: none;
+}
+
+.dex[data-theme="paldea"] .panel {
+  flex: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-color: transparent;
+  box-shadow: none;
+}
+/* The two gradients join up so there's no seam */
+.dex[data-theme="paldea"] .panel.left {
+  background: linear-gradient(180deg, #f0714c, #e4603c);
+  border-radius: 38px 38px 0 0;
+}
+.dex[data-theme="paldea"] .panel.right {
+  background: linear-gradient(180deg, #e4603c, #d84e2c);
+  border-radius: 0 0 38px 38px;
+}
+
+/* ----- Lightning bolt on top ----- */
+.dex[data-theme="paldea"]::before {
+  content: "";
+  position: absolute;
+  top: -66px;
+  right: 16%;
+  width: 48px;
+  height: 70px;
+  background: linear-gradient(90deg, #f4764f, #e4603c);
+  clip-path: polygon(55% 0, 100% 0, 70% 40%, 100% 40%, 25% 100%, 40% 55%, 5% 55%);
+}
+
+/* ----- Pointed tail underneath ----- */
+.dex[data-theme="paldea"]::after {
+  content: "";
+  position: absolute;
+  bottom: -36px;
+  left: 44%;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(90deg, #e4603c, #d84e2c);
+  clip-path: polygon(0 0, 100% 0, 60% 100%);
+}
+
+/* ----- Camera cluster (top left): blue lens + dark lens in a pill ----- */
+.dex[data-theme="paldea"] .lights {
+  width: fit-content;
+  padding: 6px 12px;
+  gap: 8px;
+  border-radius: 22px;
+  background: #c4401f;
+  border: 3px solid #7a2410;
+}
+.dex[data-theme="paldea"] .lens {
+  width: 26px;
+  height: 26px;
+  border: 3px solid #5a1c10;
+  background: radial-gradient(circle at 35% 30%, #dff0ff, #4a7fe0 55%, #1c2f7a);
+  box-shadow: none;
+  animation: none;
+}
+.dex[data-theme="paldea"] .led.r {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #5a1c10;
+  background: radial-gradient(circle at 35% 30%, #5a5f66, #14161a);
+}
+.dex[data-theme="paldea"] .led.y,
+.dex[data-theme="paldea"] .led.g {
+  display: none;
+}
+
+/* ----- Rotom's face: glowing teal ring with an eye on each side ----- */
+.dex[data-theme="paldea"] .bezel {
+  position: relative;
+  background: linear-gradient(180deg, #f58a67, #ea704c);
+  border: 5px solid #8ff0e8;
+  border-radius: 34px;
+  box-shadow:
+    0 0 14px 3px rgba(120, 235, 225, 0.65),
+    inset 0 0 12px rgba(120, 235, 225, 0.5);
+  padding: 14px;
+}
+.dex[data-theme="paldea"] .bezel::before,
+.dex[data-theme="paldea"] .bezel::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  width: 40px;
+  height: 62px;
+  box-sizing: border-box;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #b4f0ea, #4cb8b0);
+  box-shadow: 0 0 0 2px #7a2410;
+}
+.dex[data-theme="paldea"] .bezel::before {
+  left: -20px;
+  transform: rotate(-8deg);
+}
+.dex[data-theme="paldea"] .bezel::after {
+  right: -20px;
+  transform: rotate(8deg);
+}
+
+/* Warm peach screen */
+.dex[data-theme="paldea"] .screen {
+  background: #fde8dc;
+  border: 5px solid #d98a6c;
+  color: #4a1a10;
+}
+.dex[data-theme="paldea"] .divider::before {
+  background: #4a1a10;
+}
+.dex[data-theme="paldea"] .divider span {
+  border-color: #4a1a10;
+  background: #fde8dc;
+}
+
+/* ----- Bottom row ----- */
+.dex[data-theme="paldea"] .round {
+  background: radial-gradient(circle at 35% 30%, #5a5f66, #14161a);
+  border: 3px solid #7a2410;
+}
+.dex[data-theme="paldea"] .green-screen {
+  background: #fde8dc;
+  border-color: #8ff0e8;
+  color: #1f6b66;
+}
+.dex[data-theme="paldea"] .dpad button,
+.dex[data-theme="paldea"] .dpad .mid {
+  background: #6a2414;
+  color: #f6c9b8;
+}
+.dex[data-theme="paldea"] .dpad button:hover {
+  background: #8a3220;
+}
+
+/* ----- Right side ----- */
+.dex[data-theme="paldea"] .dark-display {
+  border-color: #7a2410;
+}
+.dex[data-theme="paldea"] .blue-grid button {
+  background: #fde8dc;
+  border-color: #5cc0b8;
+  color: #4a1a10;
+}
+.dex[data-theme="paldea"] .blue-grid button:active {
+  background: #f6c9b0;
+}
+.dex[data-theme="paldea"] .go {
+  background: radial-gradient(circle at 35% 35%, #ffffff, #8ff0e8 55%, #3ab8b0);
+  border-color: #e8fbf8;
+  color: #0a4a46;
+  box-shadow: 0 0 10px 2px rgba(120, 235, 225, 0.6);
+}
+
+/* ----- Narrow windows ----- */
+@media (max-width: 480px) {
+  .dex[data-theme="paldea"] {
+    width: auto;
+  }
+  .dex[data-theme="paldea"] .bezel::before,
+  .dex[data-theme="paldea"] .bezel::after {
+    display: none;
+  }
+}

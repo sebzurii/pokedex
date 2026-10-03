@@ -1,0 +1,238 @@
+/* Alola (Rotom Dex) theme. Applies when .dex has data-theme="alola". */
+
+/* One tall column, with a thin dark outline around the whole silhouette */
+.dex[data-theme="alola"] {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 440px;
+  margin: 5.5rem auto 3.5rem;
+  filter: drop-shadow(2px 0 0 #2a1410) drop-shadow(-2px 0 0 #2a1410) drop-shadow(0 2px 0 #2a1410)
+    drop-shadow(0 -2px 0 #2a1410);
+}
+.dex[data-theme="alola"] .hinge {
+  display: none;
+}
+
+/* The panels are invisible; the shapes behind them do the drawing */
+.dex[data-theme="alola"] .panel {
+  position: relative;
+  flex: none;
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.dex[data-theme="alola"] .panel.left {
+  padding-top: 74px;
+}
+.dex[data-theme="alola"] .panel.right {
+  padding-bottom: 36px;
+  margin-top: -2px;
+  background: linear-gradient(180deg, #dc3a26 calc(100% - 24px), #a82314 calc(100% - 24px));
+  border-radius: 0 0 34px 34px;
+}
+
+/* ----- Head: peaked roof, antenna, wide shoulders, four side dots ----- */
+.dex[data-theme="alola"] .panel.left::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -70px;
+  left: -60px;
+  right: -60px;
+  bottom: -2px;
+  background:
+    radial-gradient(circle 3px at 28px 150px, #1a1a1a 95%, transparent 100%),
+    radial-gradient(circle 3px at 28px 178px, #1a1a1a 95%, transparent 100%),
+    radial-gradient(circle 3px at calc(100% - 28px) 146px, #1a1a1a 95%, transparent 100%),
+    radial-gradient(circle 3px at calc(100% - 28px) 176px, #1a1a1a 95%, transparent 100%),
+    linear-gradient(180deg, #ea4a32, #dc3a26);
+  clip-path: polygon(
+    0 128px,
+    44% 56px,
+    47% 0,
+    54% 56px,
+    100% 128px,
+    100% 196px,
+    calc(100% - 60px) 214px,
+    calc(100% - 60px) 100%,
+    60px 100%,
+    60px 214px,
+    0 196px
+  );
+}
+
+/* ----- Paddle hands on thin arms (the right one is the left one flipped) ----- */
+.dex[data-theme="alola"]::before,
+.dex[data-theme="alola"]::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 34%;
+  width: 150px;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 120'%3E%3Cpath d='M96 60 L150 54 L150 80 L96 84Z' fill='%23dc3a26'/%3E%3Cpath d='M8 24 Q6 16 16 18 L90 34 Q100 36 100 46 L98 92 Q98 102 88 101 L18 96 Q8 95 8 86Z' fill='%23dc3a26'/%3E%3Cellipse cx='50' cy='64' rx='16' ry='12' fill='none' stroke='%238f1f12' stroke-width='2' transform='rotate(8 50 64)'/%3E%3Cpath d='M18 32 L70 44' stroke='%238f1f12' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")
+    no-repeat center / 100% 100%;
+}
+.dex[data-theme="alola"]::before {
+  left: -128px;
+}
+.dex[data-theme="alola"]::after {
+  right: -128px;
+  transform: scaleX(-1);
+}
+
+/* ----- Eyes: black arc between two tilted white ovals with blue irises ----- */
+.dex[data-theme="alola"] .lights {
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+  padding: 0 34px;
+  margin-bottom: -28px;
+}
+.dex[data-theme="alola"] .lights::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: 150px;
+  height: 58px;
+  transform: translateX(-50%);
+  background: #2a2a2e;
+  border-radius: 75px 75px 0 0;
+}
+.dex[data-theme="alola"] .lens,
+.dex[data-theme="alola"] .led.r {
+  position: relative;
+  z-index: 1;
+  width: 58px;
+  height: 78px;
+  box-sizing: border-box;
+  border: 3px solid #1c1c20;
+  border-radius: 50%;
+  box-shadow: none;
+  animation: none;
+}
+.dex[data-theme="alola"] .lens {
+  background: radial-gradient(ellipse 15px 22px at 58% 52%, #1f5fd0 96%, transparent 100%), #ffffff;
+  transform: rotate(-12deg);
+}
+.dex[data-theme="alola"] .led.r {
+  background: radial-gradient(ellipse 15px 22px at 42% 52%, #1f5fd0 96%, transparent 100%), #ffffff;
+  transform: rotate(12deg);
+}
+.dex[data-theme="alola"] .led.y,
+.dex[data-theme="alola"] .led.g {
+  display: none;
+}
+
+/* ----- White screen frame with a pale-blue screen ----- */
+.dex[data-theme="alola"] .bezel {
+  background: #ffffff;
+  border: 3px solid #1c1c20;
+  border-radius: 14px;
+  padding-top: 40px;
+}
+.dex[data-theme="alola"] .screen {
+  background: linear-gradient(180deg, #f8fcff, #dcefff);
+  border: 4px solid #7fc4ec;
+  color: #17324d;
+}
+.dex[data-theme="alola"] .divider::before {
+  background: #17324d;
+}
+.dex[data-theme="alola"] .divider span {
+  border-color: #17324d;
+  background: #eaf5ff;
+}
+
+/* ----- Controls ----- */
+.dex[data-theme="alola"] .round {
+  background: radial-gradient(circle at 35% 35%, #8a3a30, #4a1612);
+  border-color: #2a1410;
+}
+.dex[data-theme="alola"] .green-screen {
+  background: #e3f2fc;
+  border-color: #5aa3dc;
+  color: #17324d;
+}
+.dex[data-theme="alola"] .dpad button,
+.dex[data-theme="alola"] .dpad .mid {
+  background: #4a1612;
+  color: #f2c0b8;
+}
+.dex[data-theme="alola"] .dpad button:hover {
+  background: #6a2a22;
+}
+
+.dex[data-theme="alola"] .dark-display {
+  border-color: #2a1410;
+}
+.dex[data-theme="alola"] .blue-grid button {
+  background: #fdf3f0;
+  border-color: #8f1f12;
+  color: #4a1612;
+}
+.dex[data-theme="alola"] .blue-grid button:active {
+  background: #f2cfc8;
+}
+.dex[data-theme="alola"] .go {
+  background: radial-gradient(circle at 35% 35%, #ffffff, #7fc2f2 60%, #2f7fc8);
+  border-color: #17324d;
+  color: #0b2540;
+}
+
+/* Alola: shrink the whole Rotom to fit narrower windows, keeping the shape */
+@media (max-width: 700px) {
+  .dex[data-theme="alola"] {
+    zoom: 0.9;
+  }
+}
+@media (max-width: 630px) {
+  .dex[data-theme="alola"] {
+    zoom: 0.8;
+  }
+}
+@media (max-width: 560px) {
+  .dex[data-theme="alola"] {
+    zoom: 0.69;
+  }
+}
+@media (max-width: 490px) {
+  .dex[data-theme="alola"] {
+    zoom: 0.59;
+  }
+}
+@media (max-width: 420px) {
+  .dex[data-theme="alola"] {
+    zoom: 0.49;
+  }
+}
+@media (max-width: 350px) {
+  .dex[data-theme="alola"] {
+    zoom: 0.44;
+  }
+}
+
+/* ----- Phones: keep the antenna, drop the extras ----- */
+@media (max-width: 700px) {
+  .dex[data-theme="alola"] .panel.left {
+    border-radius: 26px 26px 0 0;
+  }
+  .dex[data-theme="alola"] .panel.right {
+    border-radius: 0 0 26px 26px;
+  }
+  .dex[data-theme="alola"] .panel.right::before,
+  .dex[data-theme="alola"] .panel.left::after,
+  .dex[data-theme="alola"] .panel.right::after,
+  .dex[data-theme="alola"] .hinge::after {
+    display: none;
+  }
+  .dex[data-theme="alola"] .hinge {
+    width: auto;
+    height: 16px;
+  }
+}
