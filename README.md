@@ -28,7 +28,7 @@ A retro-inspired, interactive Pokémon Pokédex built with HTML, CSS, and JavaSc
 * ** JavaScript ** — Application logic, navigation, search, and interactive features.
 * ** [PokéAPI](https://pokeapi.co/) ** — Pokémon data source.
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 POKEDEX/
